@@ -1356,7 +1356,7 @@ function calcDose() {
 
   const fecl3_kg = ((fecl3_conc * vol * 1000) / 1e9 * 1e6 / 1000).toFixed(1);
   const chito_kg = ((chito_conc * vol * 1000) / 1e9 * 1e6 / 1000).toFixed(1);
-  const cost = Math.round(fecl3_kg * 50000 + chito_kg * 80000);
+  const cost = Math.round(fecl3_kg * 500 + chito_kg * 8000);
 
   document.getElementById('r-fecl3-conc').textContent = fecl3_conc + ' mg/L';
   document.getElementById('r-fecl3-kg').textContent = fecl3_kg + ' kg';
@@ -1369,4 +1369,5 @@ calcDose();
 </script>
 </body>
 </html>
+
 
