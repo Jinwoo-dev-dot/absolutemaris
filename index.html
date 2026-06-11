@@ -593,7 +593,7 @@ input[type=range]::-webkit-slider-thumb {
       <span class="nav-icon">⚗</span> 응집제 투입 관리
     </div>
     <div class="nav-item" onclick="navigate('facilities')">
-      <span class="nav-icon">🏭</span> 시설 현황
+      <span class="nav-icon">🚢</span> 선박 BWMS 현황
     </div>
 
     <div class="nav-section-label">정책·보고</div>
@@ -789,7 +789,7 @@ input[type=range]::-webkit-slider-thumb {
             <div class="alert-item">
               <div class="alert-icon warn">🟡</div>
               <div>
-                <div class="alert-body-text">인천항 3호 처리시설 응집효율 저하</div>
+                <div class="alert-body-text">인천퍼시픽호 BWMS 응집효율 저하</div>
                 <div class="alert-meta">FeCl₃ 투입량 자동 증량 조치 · 5시간 전</div>
               </div>
               <span class="pill pill-amber" style="margin-left:auto;white-space:nowrap"><span class="pill-dot"></span>주의</span>
@@ -810,7 +810,7 @@ input[type=range]::-webkit-slider-thumb {
           <div class="card-header">
             <div>
               <div class="card-title">이달 응집제 투입 현황</div>
-              <div class="card-subtitle">전국 합계 · 2024년 12월</div>
+              <div class="card-subtitle">전체 선박 합계 · 2024년 12월</div>
             </div>
           </div>
           <div class="card-body">
@@ -854,8 +854,8 @@ input[type=range]::-webkit-slider-thumb {
       <div class="card section-gap">
         <div class="card-header">
           <div>
-            <div class="card-title">전국 해안 미세플라스틱 오염도</div>
-            <div class="card-subtitle">모니터링 정점 47개소 · 2024년 12월 기준</div>
+            <div class="card-title">주요 항만 선박평형수 미세플라스틱 농도</div>
+            <div class="card-subtitle">평형수 배출구 모니터링 정점 47개소 · 2024년 12월 기준</div>
           </div>
           <div style="display:flex;gap:12px;align-items:center">
             <div style="display:flex;gap:6px;align-items:center;font-size:11px;color:var(--slate-500)">
@@ -955,7 +955,7 @@ input[type=range]::-webkit-slider-thumb {
               </tr>
               <tr>
                 <td><span class="pill pill-amber"><span class="pill-dot"></span>주의</span></td>
-                <td><strong>인천항 3호</strong></td>
+                <td><strong>인천퍼시픽호</strong></td>
                 <td>응집 효율 저하 감지</td>
                 <td class="mono" style="color:var(--amber-500)">효율 54%</td>
                 <td class="mono">2024-12-10 06:42</td>
@@ -988,22 +988,22 @@ input[type=range]::-webkit-slider-thumb {
       <div class="grid-2">
         <div class="card section-gap">
           <div class="card-header">
-            <div class="card-title">응집제 투입량 계산</div>
-            <div class="card-subtitle">시설별 최적 투입량 산출</div>
+            <div class="card-title">선박평형수 응집제 투입량 계산</div>
+            <div class="card-subtitle">평형수 배출 전 선내 처리장치(BWMS) 투입량 산출</div>
           </div>
           <div class="card-body">
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label">처리 시설</label>
+                <label class="form-label">대상 선박</label>
                 <select class="form-select" onchange="calcDose()">
-                  <option>마산만 1호 처리시설</option>
-                  <option>마산만 2호 처리시설</option>
-                  <option>인천항 3호 처리시설</option>
-                  <option>부산항 1호 처리시설</option>
+                  <option>마산호 (BWMS 1호)</option>
+                  <option>진해스타호 (BWMS 2호)</option>
+                  <option>인천퍼시픽호 (BWMS 3호)</option>
+                  <option>부산익스프레스호 (BWMS 1호)</option>
                 </select>
               </div>
               <div class="form-group">
-                <label class="form-label">처리 수량 (m³/일)</label>
+                <label class="form-label">평형수 탱크 용량 (톤)</label>
                 <input type="number" class="form-input" id="d-vol" value="500" oninput="calcDose()">
               </div>
             </div>
@@ -1013,7 +1013,7 @@ input[type=range]::-webkit-slider-thumb {
                 <input type="number" class="form-input" id="d-conc" value="6.8" step="0.1" oninput="calcDose()">
               </div>
               <div class="form-group">
-                <label class="form-label">현재 pH</label>
+                <label class="form-label">평형수 pH</label>
                 <input type="number" class="form-input" id="d-ph" value="8.1" step="0.1" oninput="calcDose()">
               </div>
             </div>
@@ -1036,7 +1036,7 @@ input[type=range]::-webkit-slider-thumb {
                 <span class="calc-value" id="r-fecl3-conc">32 mg/L</span>
               </div>
               <div class="calc-row">
-                <span class="calc-key">FeCl₃ 일일 필요량</span>
+                <span class="calc-key">FeCl₃ 1회 필요량</span>
                 <span class="calc-value" id="r-fecl3-kg">16.0 kg</span>
               </div>
               <div class="calc-row">
@@ -1044,7 +1044,7 @@ input[type=range]::-webkit-slider-thumb {
                 <span class="calc-value" id="r-chito-conc">5 mg/L</span>
               </div>
               <div class="calc-row">
-                <span class="calc-key">키토산 일일 필요량</span>
+                <span class="calc-key">키토산 1회 필요량</span>
                 <span class="calc-value" id="r-chito-kg">2.5 kg</span>
               </div>
               <div class="calc-row">
@@ -1052,7 +1052,7 @@ input[type=range]::-webkit-slider-thumb {
                 <span class="calc-value" id="r-removal" style="color:var(--teal-500)">71%</span>
               </div>
               <div class="calc-row">
-                <span class="calc-key">일일 약품 비용</span>
+                <span class="calc-key">1회 처리 약품 비용</span>
                 <span class="calc-value" id="r-cost">2,800,000 원</span>
               </div>
             </div>
@@ -1069,16 +1069,16 @@ input[type=range]::-webkit-slider-thumb {
     <div id="view-facilities" class="page-view">
       <div class="card section-gap">
         <div class="card-header">
-          <div class="card-title">시설 현황</div>
-          <div class="card-subtitle">전국 응집 처리 시설 16개소</div>
+          <div class="card-title">선박 평형수처리장치(BWMS) 현황</div>
+          <div class="card-subtitle">FeCl₃-키토산 모듈 탑재 선박 16척</div>
         </div>
         <div class="card-body">
           <table class="data-table">
             <thead>
               <tr>
-                <th>시설명</th>
-                <th>위치</th>
-                <th>처리 용량</th>
+                <th>선박명</th>
+                <th>현재 위치(항만)</th>
+                <th>평형수 탱크 용량</th>
                 <th>현재 제거율</th>
                 <th>가동 상태</th>
                 <th>마지막 점검</th>
@@ -1086,49 +1086,49 @@ input[type=range]::-webkit-slider-thumb {
             </thead>
             <tbody>
               <tr>
-                <td><strong>마산만 1호</strong></td>
-                <td>경상남도 창원시</td>
-                <td class="mono">800 m³/일</td>
+                <td><strong>마산호</strong></td>
+                <td>마산항</td>
+                <td class="mono">800 톤</td>
                 <td><span style="color:var(--amber-500);font-weight:700">62%</span></td>
                 <td><span class="pill pill-amber"><span class="pill-dot"></span>점검 중</span></td>
                 <td class="mono">2024-12-08</td>
               </tr>
               <tr>
-                <td><strong>마산만 2호</strong></td>
-                <td>경상남도 창원시</td>
-                <td class="mono">500 m³/일</td>
+                <td><strong>진해스타호</strong></td>
+                <td>진해항</td>
+                <td class="mono">500 톤</td>
                 <td><span style="color:var(--red-500);font-weight:700">41%</span></td>
                 <td><span class="pill pill-red"><span class="pill-dot"></span>긴급 점검</span></td>
                 <td class="mono">2024-12-10</td>
               </tr>
               <tr>
-                <td><strong>인천항 3호</strong></td>
-                <td>인천광역시 중구</td>
-                <td class="mono">1,200 m³/일</td>
+                <td><strong>인천퍼시픽호</strong></td>
+                <td>인천항</td>
+                <td class="mono">1,200 톤</td>
                 <td><span style="color:var(--amber-500);font-weight:700">54%</span></td>
                 <td><span class="pill pill-amber"><span class="pill-dot"></span>주의</span></td>
                 <td class="mono">2024-12-09</td>
               </tr>
               <tr>
-                <td><strong>부산항 1호</strong></td>
-                <td>부산광역시 영도구</td>
-                <td class="mono">2,000 m³/일</td>
+                <td><strong>부산익스프레스호</strong></td>
+                <td>부산항</td>
+                <td class="mono">2,000 톤</td>
                 <td><span style="color:var(--green-500);font-weight:700">78%</span></td>
                 <td><span class="pill pill-green"><span class="pill-dot"></span>정상</span></td>
                 <td class="mono">2024-12-07</td>
               </tr>
               <tr>
-                <td><strong>목포 1호</strong></td>
-                <td>전라남도 목포시</td>
-                <td class="mono">600 m³/일</td>
+                <td><strong>목포퀸호</strong></td>
+                <td>목포항</td>
+                <td class="mono">600 톤</td>
                 <td><span style="color:var(--green-500);font-weight:700">81%</span></td>
                 <td><span class="pill pill-green"><span class="pill-dot"></span>정상</span></td>
                 <td class="mono">2024-12-06</td>
               </tr>
               <tr>
-                <td><strong>여수 1호</strong></td>
-                <td>전라남도 여수시</td>
-                <td class="mono">700 m³/일</td>
+                <td><strong>여수트레이더호</strong></td>
+                <td>여수항</td>
+                <td class="mono">700 톤</td>
                 <td><span style="color:var(--amber-500);font-weight:700">59%</span></td>
                 <td><span class="pill pill-amber"><span class="pill-dot"></span>주의</span></td>
                 <td class="mono">2024-12-09</td>
@@ -1161,12 +1161,12 @@ input[type=range]::-webkit-slider-thumb {
             <div class="policy-phase-num">1</div>
             <div style="flex:1">
               <div class="policy-phase-period">단기 · 2025–2026</div>
-              <div class="policy-phase-title">전처리 모듈 시범 설치 및 효과 검증</div>
-              <div class="policy-phase-desc">마산만·진해만 등 고오염 항만에 PAC+키토산 복합 응집 전처리 모듈을 시범 설치합니다. pH·염분·탁도·수온 자동 계측 센서를 연동하여 응집제 투입량을 실시간 산출합니다.</div>
+              <div class="policy-phase-title">선박평형수 배출구 소형 응집 모듈 시범 탑재</div>
+              <div class="policy-phase-desc">고오염 항로 운항 선박의 평형수 배출 라인에 FeCl₃+키토산 복합 응집 소형 모듈을 시범 탑재합니다. 배출구 직전 구간에서 pH·탁도 센서로 응집제 투입량을 자동 산출합니다.</div>
               <ul class="policy-items">
-                <li>우선 대상: 마산만, 진해만, 인천항 북항</li>
+                <li>우선 대상: 마산항·진해항·인천항 입항 선박</li>
                 <li>시범 운영 6개월 후 제거율 데이터 공개</li>
-                <li>PAC 단독 대비 15~25%p 향상 목표</li>
+                <li>무처리 배출 대비 15~25%p 향상 목표</li>
               </ul>
             </div>
           </div>
@@ -1189,7 +1189,7 @@ input[type=range]::-webkit-slider-thumb {
             <div style="flex:1">
               <div class="policy-phase-period">중기 · 2027–2028</div>
               <div class="policy-phase-title">해양환경관리법 시행령 개정</div>
-              <div class="policy-phase-desc">항만·해수처리 시설 미세플라스틱 사전 차단 의무화를 법령으로 규정합니다. 항만별 농도 기준치를 설정하고 초과 시설 개선 명령 제도를 도입합니다.</div>
+              <div class="policy-phase-desc">선박 평형수처리장치(BWMS) 내 미세플라스틱 사전 차단 모듈 탑재 의무화를 법령으로 규정합니다. 선종·톤수별 농도 기준치를 설정하고 미설치 선박 개선 명령 제도를 도입합니다.</div>
               <ul class="policy-items">
                 <li>해양환경관리법 시행령 제△△조 신설</li>
                 <li>국제 항만 협약(MARPOL Annex VI) 연계</li>
@@ -1274,7 +1274,7 @@ input[type=range]::-webkit-slider-thumb {
                 <tbody>
                   <tr><td>평균 제거율</td><td class="mono">71%</td><td class="mono">66.8%</td></tr>
                   <tr><td>FeCl₃ 투입량</td><td class="mono">4,820 kg</td><td class="mono">4,462 kg</td></tr>
-                  <tr><td>처리 수량 합계</td><td class="mono">89,400 m³</td><td class="mono">86,200 m³</td></tr>
+                  <tr><td>처리 평형수 합계</td><td class="mono">89,400 톤</td><td class="mono">86,200 톤</td></tr>
                 </tbody>
               </table>
             </div>
@@ -1303,7 +1303,7 @@ const titles = {
   map: ['오염도 지도','· 전국 모니터링 정점'],
   alerts: ['경보 관리','· 최근 48시간'],
   dose: ['응집제 투입 관리','· 시설별 최적 산출'],
-  facilities: ['시설 현황','· 전국 16개소'],
+  facilities: ['선박 BWMS 현황','· 탑재 선박 16척'],
   policy: ['정책 로드맵','· 2025–2030'],
   report: ['보고서 생성','· 월간·분기·연간'],
 };
@@ -1356,7 +1356,7 @@ function calcDose() {
 
   const fecl3_kg = ((fecl3_conc * vol * 1000) / 1e9 * 1e6 / 1000).toFixed(1);
   const chito_kg = ((chito_conc * vol * 1000) / 1e9 * 1e6 / 1000).toFixed(1);
-  const cost = Math.round(fecl3_kg * 50000 + chito_kg * 800000);
+  const cost = Math.round(fecl3_kg * 50000 + chito_kg * 80000);
 
   document.getElementById('r-fecl3-conc').textContent = fecl3_conc + ' mg/L';
   document.getElementById('r-fecl3-kg').textContent = fecl3_kg + ' kg';
@@ -1369,3 +1369,4 @@ calcDose();
 </script>
 </body>
 </html>
+
